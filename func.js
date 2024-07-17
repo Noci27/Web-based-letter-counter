@@ -24,7 +24,10 @@ function countLetters (text){
     }
     else{
         for(j = 0; j < lenght; j++){    //if neither checkboxes are checked
-            letters[(text.charCodeAt(j) % 32) - 1]++;
+            let character = text.charCodeAt(j);
+            if(character > 64 && character < 123){  //check if it's actually a letter
+                letters[(character % 32) - 1]++;
+            }
         }
     }
     // console.log(letters);
